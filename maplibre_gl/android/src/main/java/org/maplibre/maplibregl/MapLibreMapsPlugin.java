@@ -4,9 +4,14 @@
 
 package org.maplibre.maplibregl;
 
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LifecycleRegistry;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -20,6 +25,8 @@ import io.flutter.plugin.common.MethodChannel;
  * overlay.
  */
 public class MapLibreMapsPlugin implements FlutterPlugin, ActivityAware {
+
+  private static final String VIEW_TYPE = "plugins.flutter.io/maplibre_gl";
 
   static FlutterAssets flutterAssets;
   private Lifecycle lifecycle;
